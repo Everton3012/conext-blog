@@ -9,15 +9,15 @@ import { AuthorsModule } from './authors/authors.module'
 import path from 'path'
 
 @Module({
-  imports: [
-    ConfigModule.forRoot(),
-    DatabaseModule,
-    GraphQLModule.forRoot<ApolloDriverConfig>({
-      driver: ApolloDriver,
-      autoSchemaFile: path.resolve(process.cwd(), 'src/schema.gql'),
-    }),
-    AuthorsModule,
-  ],
-  providers: [AppService, AppResolver],
+    imports: [
+        ConfigModule.forRoot(),
+        DatabaseModule,
+        GraphQLModule.forRoot<ApolloDriverConfig>({
+            driver: ApolloDriver,
+            autoSchemaFile: path.resolve(process.cwd(), 'src/schema.gql'),
+        }),
+        AuthorsModule,
+    ],
+    providers: [AppService, AppResolver],
 })
 export class AppModule {}
